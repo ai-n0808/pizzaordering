@@ -1,8 +1,12 @@
-// import Home from "./pages/Home";
-// import NavBar from "./components/Navbar";
+import React, { useState } from "react";
+import Menu from "./components/Menu";
 
 function App() {
-  return <h1>Order your dinner!</h1>;
+  return (
+    <div>
+      <Menu />
+    </div>
+  );
 }
 
 export default App;
