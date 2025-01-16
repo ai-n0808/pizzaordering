@@ -12,7 +12,7 @@ const Pizza: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="bg-orange-100">
       <button onClick={() => navigate("/")}>Back to Menu</button>
       <h1>{pizza.name}</h1>
       <img src={pizza.image} alt={pizza.name} />

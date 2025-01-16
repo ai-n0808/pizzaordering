@@ -4,7 +4,6 @@ import Menu from "./components/Menu";
 import Pizza from "./components/Pizza";
 import Cart from "./components/Cart";
 import OrderSummary from "./components/OrderSummary";
-import { menuItem } from "./data/menuItems";
 
 interface CartItem {
   id: number;
@@ -44,7 +43,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="container mx-auto p-4">
+      <div>
         <Routes>
           <Route path="/" element={<Menu addToCart={addToCart} />} />
           <Route path="/pizza/:id" element={<Pizza />} />
