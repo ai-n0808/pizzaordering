@@ -8,6 +8,7 @@ interface CartItem {
 interface CartProps {
   cart: CartItem[];
   updateCart: (id: number, quantity: number) => void;
+  removeFromCart: (id: number) => void;
 }
 
 const Cart: React.FC<CartProps> = ({ cart, updateCart }) => {
