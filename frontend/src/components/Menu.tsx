@@ -14,14 +14,18 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
         {menuItem.map((item) => (
           <div
             key={item.id}
-            className="bg-white shadow-md rounded-lg p-6 mx-auto static w-90 h-100"
+            className="bg-white shadow-md rounded-lg p-6 mx-auto relative w-90 h-100"
           >
             <Link to={`/pizza/${item.id}`}>
-              <h2 className="text-center font-serif">{item.name}</h2>
-              <img src={item.image} alt={item.name} />
+              <h2 className="text-center font-serif mb-2">{item.name}</h2>
+              <img
+                src={item.image}
+                alt={item.name}
+                className="hover:-translate-y-2 hover:shadow-lg shadow-black-900 mb-5"
+              />
             </Link>
             <button
-              className="text-sm absolute"
+              className="text-sm absolute right-5 bottom-2"
               onClick={() => addToCart(item)}
             >
               Add to Cart
