@@ -27,10 +27,10 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
               />
             </Link>
             <button
-              className="text-sm absolute right-5 bottom-2"
+              className="text-sm font-dancing absolute right-5 bottom-2"
               onClick={() => addToCart(item)}
             >
-              Add to Cart
+              Add...?
             </button>
           </div>
         ))}
