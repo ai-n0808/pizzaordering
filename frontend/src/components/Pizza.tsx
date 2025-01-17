@@ -12,12 +12,14 @@ const Pizza: React.FC = () => {
   }
 
   return (
-    <div className="bg-orange-100">
-      <button onClick={() => navigate("/")}>Back to Menu</button>
-      <h1>{pizza.name}</h1>
-      <img src={pizza.image} alt={pizza.name} />
+    <div>
+      <h1 className="text-center text-4xl font-dancing font-bold mb-10">
+        {pizza.name}
+      </h1>
+      <img src={pizza.image} alt={pizza.name} className="w-100 h-50" />
       <p>{pizza.description}</p>
       <p>Price: ${pizza.price.toFixed(2)}</p>
+      <button onClick={() => navigate("/")}>Back to Menu</button>
     </div>
   );
 };
