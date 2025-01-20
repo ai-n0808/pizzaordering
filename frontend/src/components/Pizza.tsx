@@ -2,7 +2,12 @@ import { useParams, useNavigate } from "react-router-dom";
 import { menuItem } from "../data/menuItems";
 
 interface PizzaProps {
-  addToCart: (item: { id: number; name: string; price: number }) => void;
+  addToCart: (item: {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+  }) => void;
 }
 
 const Pizza: React.FC<PizzaProps> = ({ addToCart }) => {

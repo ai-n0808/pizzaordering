@@ -5,6 +5,7 @@ interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  image: string;
 }
 
 interface CartProps {
@@ -13,19 +14,25 @@ interface CartProps {
   removeFromCart: (id: number) => void;
 }
 
-const Cart: React.FC<CartProps> = ({ cart }) => {
+const Cart: React.FC<CartProps> = ({ cart, removeFromCart }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-orange-100">
-      <h1 className="">Your Cart</h1>
+    <div>
+      <h1 className="font-dancing text-4xl text-center">Your Cart</h1>
       {cart.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
         cart.map((item) => (
-          <div key={item.id}>
-            <h2>{item.name}</h2>
+          <div key={item.id} className="grid grid-cols-3">
+            <h2 className="text-3xl">{item.name}</h2>
             <p>${item.price.toFixed(2)}</p>
+            <button onClick={() => removeFromCart(item.id)}>Remove</button>
+            <img
+              src={item.image}
+              alt={item.name}
+              className="w-60 h-60 rounded-md mb-6"
+            />
           </div>
         ))
       )}

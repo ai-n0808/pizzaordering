@@ -1,11 +1,14 @@
 import React from "react";
 import { menuItem } from "../data/menuItems";
 import { Link } from "react-router-dom";
-import OrderSummary from "./OrderSummary";
-import Cart from "./Cart";
 
 interface MenuProps {
-  addToCart: (item: { id: number; name: string; price: number }) => void;
+  addToCart: (item: {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+  }) => void;
 }
 
 const Menu: React.FC<MenuProps> = ({ addToCart }) => {
@@ -35,7 +38,7 @@ const Menu: React.FC<MenuProps> = ({ addToCart }) => {
               />
             </Link>
             <button
-              className="text-sm font-dancing absolute right-5 bottom-2"
+              className="text-sm font-dancing absolute right-5 bottom-2 hover:bg-orange-100"
               onClick={() => addToCart(item)}
             >
               Add...?

@@ -10,12 +10,18 @@ interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  image: string;
 }
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
 
-  const addToCart = (item: { id: number; name: string; price: number }) => {
+  const addToCart = (item: {
+    id: number;
+    name: string;
+    price: number;
+    image: string;
+  }) => {
     setCart((prevCart) => {
       const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
       if (existingItem) {
