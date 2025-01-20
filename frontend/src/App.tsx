@@ -43,10 +43,10 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="bg-orange-100">
+      <div>
         <Routes>
           <Route path="/" element={<Menu addToCart={addToCart} />} />
-          <Route path="/pizza/:id" element={<Pizza />} />
+          <Route path="/pizza/:id" element={<Pizza addToCart={addToCart} />} />
           <Route
             path="/cart"
             element={

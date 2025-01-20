@@ -1,6 +1,8 @@
 import React from "react";
 import { menuItem } from "../data/menuItems";
 import { Link } from "react-router-dom";
+import OrderSummary from "./OrderSummary";
+import Cart from "./Cart";
 
 interface MenuProps {
   addToCart: (item: { id: number; name: string; price: number }) => void;
@@ -8,8 +10,14 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ addToCart }) => {
   return (
-    <div className="bg-orange-100">
+    <div className="bg-orange-100 relative">
       <h1 className="text-5xl font-dancing text-center mb-4">Menu</h1>
+      <Link
+        to="/cart"
+        className="absolute top-5 right-5 bg-orange-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-red-600 transition"
+      >
+        My cart 🛒
+      </Link>
       <div className="grid grid-rows-3 grid-cols-3 gap-4">
         {menuItem.map((item) => (
           <div
